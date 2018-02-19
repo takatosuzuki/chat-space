@@ -1,12 +1,11 @@
-# README
+# DB設計
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false, unique: true|
-add_index :users,  [:name, :email]
+|name|string|index: true, null: false, unique: true|
+|email|string|null: false|
 
 ### Association
 - has_many   :messages
@@ -16,21 +15,22 @@ add_index :users,  [:name, :email]
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
-- has_many :users
+- has_many :messages
 
 ## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|string||
+|content|string||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :group
 - belongs_to :user
 
 ## membersテーブル
@@ -39,7 +39,6 @@ add_index :users,  [:name, :email]
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-add_index :members,  [:user_id, :group_id]
 
 ### Association
 - belongs_to :group
