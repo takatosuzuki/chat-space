@@ -6,11 +6,11 @@
 |------|----|-------|
 |name|string|null: false|
 |email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
+add_index :users,  [:name, :email]
 
 ### Association
-- has_many   :message
-- has_many   :group
+- has_many   :messages
+- has_many   :groups
 
 ## groupsテーブル
 
@@ -19,13 +19,13 @@
 |name|string|null: false|
 
 ### Association
-- belongs_to :user
+- has_many :users
 
 ## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|body|string||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -39,6 +39,7 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+add_index :members,  [:user_id, :group_id]
 
 ### Association
 - belongs_to :group
