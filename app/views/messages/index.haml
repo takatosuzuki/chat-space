@@ -1,0 +1,49 @@
+.layout-notification
+  .chat
+    .chat-side
+      .chat-user
+        %h5 テストテスト名
+        .chat-user__actions
+          %a.chat-user__action{:href => "/chat_groups/new"}
+            %i.fa.fa-pencil-square-o
+          %a.chat-user__action{:href => "/users/edit"}
+            %i.fa.fa-cog
+      %ul.chat-groups
+        %li.chat-group
+          %a.chat-group__link{:href => "/chat_groups/20252/messages"}
+            %p.chat-group__name テスト
+            %p.chat-group__message まだメッセージはありません。
+    / chat-side
+    .chat-main
+      .chat-header
+        .chat-header--left
+          %h2 テストテスト名
+          %ul
+            %li テストテスト
+            %li テストテスト
+            %li テストテスト
+            %li テストテスト
+            %li テストテスト
+        .chat-header--right
+          %a.chat-header__edit-btn{:href => ""} Edit
+      / chat-header
+      .chat-body
+        %ul.chat-messages
+          %li.chat-message
+            %dl.chat-message__header
+              %dt
+                テストテスト
+                %time 2018/03/06 05:19:36
+              %dd テスト投稿
+      / chat-body <
+      .chat-footer
+        %form{:action => ""}
+          .chat-footer__body
+            %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+            %label{:for => "message_image"}
+              %i.fa.fa-image
+              %input{:type => "file", :name => "message[image]", :id => "message_image"}/
+          %submit.submit Send
+      / chat-footer
+  / chat
+/ layout-notification
