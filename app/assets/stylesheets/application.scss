@@ -1,5 +1,6 @@
 @import "compass";
 @import "./reset";
+@import "./variable";
 @import "./mixin";
 @import "./base";
 
@@ -8,8 +9,7 @@
   height: 100vh;
   .chat-side{
     background: #2f3e51;
-    max-width: 300px;
-    width: 100%;
+    width: 300px;
     .chat-user{
       @include display-flex();      
       @include justify-content(space-between);
@@ -17,7 +17,7 @@
       padding: 30px 20px;
       h5{   
         @include fz(16);
-        color: #fff;
+        color: $base-color;
         font-weight: bold;
       }
       .chat-user__actions{
@@ -141,7 +141,7 @@
         .submit{
           @include box-sizing(border-box);
           background: #59ADEA;
-          color: #fff;
+          color: $base-color;
           font-weight: bold;
           height: 50px;
           line-height: 2;
