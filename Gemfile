@@ -55,3 +55,4 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
 gem 'compass-rails', github: 'Compass/compass-rails'
+gem 'devise'

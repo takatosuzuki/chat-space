@@ -27,9 +27,7 @@ $(function(){
     side.css('height',h + 'px');
     m_body.css('height', re_body + 'px');    
   }
-
-  adjust();
-
+  
   $(window).on('load resize', function() {
     adjust();
   });

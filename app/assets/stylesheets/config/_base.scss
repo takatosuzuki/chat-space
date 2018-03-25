@@ -1,0 +1,31 @@
+/* Scss Document */
+
+// 日本語フォント
+$base_font:"游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, Lato, "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+// 英文フォント
+$en:"trajan-pro-3";
+
+body{
+	@include fz(14);
+	font-feature-settings : "palt";
+	font-family: $base_font;
+	width: 100%;
+	}	
+	@include media($mobile) {
+		@include fz(12);
+	}
+
+html {
+    font-size: 62.5%;
+}
+
+img{
+	vertical-align: bottom;
+	width: 100%;
+}
+
+a{
+	color: $base-color;
+	text-decoration: none;
+}
